@@ -13,7 +13,7 @@
 class Db_Gear extends Gear {
     protected $name = 'Database';
     protected $description = 'Database operations management';
-    protected $order = -1000;
+    protected $order = -100;
     protected $driver;
     public static $error_codes = array(
         100 => 'Driver not found',
