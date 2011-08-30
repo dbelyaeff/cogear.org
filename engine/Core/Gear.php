@@ -262,7 +262,7 @@ abstract class Gear extends Cogearable{
      *
      * @return string
      */
-    protected function getPath() {
+    public function getPath() {
         return $this->path = $this->reflection->getFileName();
     }
 
@@ -271,7 +271,7 @@ abstract class Gear extends Cogearable{
      *
      * @return  string
      */
-    protected function getDir() {
+    public function getDir() {
         if (!$this->path)
             $this->getPath();
         return $this->dir = dirname($this->path);
@@ -282,11 +282,11 @@ abstract class Gear extends Cogearable{
      *
      * @return string
      */
-    protected function getFolder() {
+    public function getFolder() {
         if (!$this->dir)
             $this->getDir();
         $this->folder = str_replace(array(ROOT, DS), array('', '/'), $this->dir);
-        return self::normalizePath($this->dir);
+        return self::normalizePath($this->folder);
     }
 
     /**
@@ -294,14 +294,14 @@ abstract class Gear extends Cogearable{
      *
      * @return  string
      */
-    protected function getGear() {
+    public function getGear() {
         return $this->gear ? $this->gear : $this->gear = Cogear::prepareGearNameFromClass($this->reflection->getName());
     }
 
     /**
      * Get base name
      */
-    protected function getBase() {
+    public function getBase() {
         $cogear = getInstance();
         $base = str_replace('_', '/', strtolower($this->gear));
         return $this->base ? $this->base : $this->base = $cogear->get($this->gear . '.base', $base);
@@ -310,7 +310,7 @@ abstract class Gear extends Cogearable{
     /**
      * Get gear options
      */
-    protected function getSettings() {
+    public function getSettings() {
         $this->settings = new Core_ArrayObject($this->settings);
         if ($config = Config::read(find(basename($this->dir) . DS . 'settings' . EXT))) {
             return $this->settings ? $this->settings->mix($config) : $this->settings = $config;
