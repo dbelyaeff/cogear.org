@@ -72,7 +72,7 @@ class Router extends Options {
         ),
         'to' => array(
             '(.+?)',
-            '(.*?)',
+            '([^_]*?)',
             '([\d]+)',
             '([a-z]+)',
             '([\w-_]+)',

@@ -303,7 +303,7 @@ abstract class Gear extends Cogearable{
      */
     public function getBase() {
         $cogear = getInstance();
-        $base = str_replace('_', '/', strtolower($this->gear));
+        $base = strtolower(basename($this->folder));
         return $this->base ? $this->base : $this->base = $cogear->get($this->gear . '.base', $base);
     }
 
@@ -416,6 +416,7 @@ abstract class Gear extends Cogearable{
 
     /**
      * Dispatcher
+     *
      * @param string $action
      */
     public function index() {

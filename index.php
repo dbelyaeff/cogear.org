@@ -71,10 +71,32 @@ function debug() {
  * @return  boolean
  */
 function autoload($class) {
-    $filename = str_replace('_', DS, $class);
-    if ($path = find($filename.EXT)) {
-        include $path;
-        return TRUE;
+    $pieces = explode('_', $class);
+    $options = array();
+    switch (sizeof($pieces)) {
+        case 1:
+            $options[] = $pieces[0];
+            break;
+        case 2:
+            $options[] = implode('_',$pieces);
+            $options[] = implode(DS,$pieces);
+            break;
+        case 3:
+            $first = array_shift($pieces);
+            $options[] = $first.'_'.implode('_',$pieces);
+            $options[] = $first.'_'.implode(DS,$pieces);
+            $options[] = $first.DS.implode('_',$pieces);
+            $options[] = $first.DS.implode(DS,$pieces);
+            break;
+        case 4:
+
+            break;
+    }
+    foreach ($options as $filename) {
+        if ($path = find($filename . EXT)) {
+            include $path;
+            return TRUE;
+        }
     }
     return FALSE;
 }
@@ -100,7 +122,7 @@ define('SITE_GEARS', SITE . DS . GEARS_FOLDER);
 $cogear->config = new Config(SITE . DS . 'settings' . EXT);
 define('DEVELOPMENT', $cogear->config->development);
 $folder = basename(ROOT);
-if (!in_array($folder, array($host,'www', 'public_html', 'htdocs', SITE))) {
+if (!in_array($folder, array($host, 'www', 'public_html', 'htdocs', SITE))) {
     define('SUBDIR', $folder);
 }
 if (($port = $cogear->request->get('SERVER_PORT')) != 80) {
@@ -122,7 +144,7 @@ $cogear->assets = new Harvester();
 $cogear->response = new Response();
 $cogear->session = Session::factory('session', $options);
 // Load current site settings if file exists
-$cogear->config->load(SITE.DS.'config'.EXT);
+$cogear->config->load(SITE . DS . 'config' . EXT);
 // Load gears
 $cogear->loadGears();
 event('ignite');
