@@ -16,6 +16,6 @@ class jQueryOrbit_Gear extends Gear {
     protected $name = 'jQuery Orbit';
     protected $description = 'Add awesome jQuery Orbit';
     protected $package = 'jQuery';
-    protected $order = -100;
+    protected $order = 0;
 
 }
