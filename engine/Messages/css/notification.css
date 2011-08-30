@@ -24,7 +24,7 @@ div.cogear_message_error, div.cogear_message_success, div.cogear_message_info {
 	font-size: 13px;
 	padding: 10px 10px 10px 44px;
 	margin: 0pt auto 1em;
-	width: 100%;
+	width: auto;
 	border: 1px solid #DDD;
 	border-radius: 3px 3px 3px 3px;
 	-moz-border-radius: 3px 3px 3px 3px;
