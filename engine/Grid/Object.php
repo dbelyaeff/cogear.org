@@ -12,7 +12,9 @@
  */
 class Grid_Object extends Options {
     protected $name;
+    protected $template = 'Grid.grid';
     protected $item_template;
+    protected $filters;
     /**
      * Constructor
      * 
@@ -32,17 +34,28 @@ class Grid_Object extends Options {
         return $this;
     }
     /**
+     * Set filters
+     * 
+     * @param array $filters 
+     */
+    public function setFilters($filters = NULL){
+        $this->filters = $filters;
+    }
+    /**
      * Render
      */
-    public function render(){
+    public function render($template = NULL){
+        $template OR $template = $this->template;
         event('grid.render',$this);
         event('grid.render.'.$this->name,$this);
         $output = new Core_ArrayObject();
         foreach($this as $item){
+            $this->filters && $item->filter($this->filters);
             $item->in_grid = TRUE;
             $output->append($item->render($this->item_template));
         }
-        $tpl = new Template('Grid.grid');
+        !$this->count() && info(t('There is nothing to show.'));
+        $tpl = new Template($template);
         $tpl->grid = $this;
         $tpl->data = $output->toString();
         return $tpl->render();
