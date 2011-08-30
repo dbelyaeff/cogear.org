@@ -141,7 +141,7 @@ final class Cogear implements Interface_Singleton {
                  }
             }
         }
-        return $result;
+        return $result->count() > 0 ? $result : NULL;
     }
 
     /**
