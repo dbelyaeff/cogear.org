@@ -1,0 +1,8 @@
+#grid-featured > div{
+    width: 960px;
+    height: 150px;
+    padding: 20px;
+}
+#grid-featured {
+    background: url(../img/featured.png) repeat-x 0 0;
+}
