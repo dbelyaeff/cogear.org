@@ -69,7 +69,7 @@ class Pager_Pages extends Pager_Abstract {
             'ajaxed' => $this->ajaxed,
             'target' => $this->target,
         ));
-        return $tpl->render();
+        return $this->pages_num ? $tpl->render() : '';
     }
 
 }
