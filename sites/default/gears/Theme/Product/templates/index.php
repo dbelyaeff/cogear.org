@@ -5,28 +5,30 @@
     </head>
     <body>
         <?= theme('before') ?>
-        <div class="container_12">
-            <div class="grid_12" id="header">
-                <a href="<?= Url::link() ?>"><img src="<?= $theme->getFolder() ?>/img/logo.png" alt="cogear framwork"/></a>
-                <?= theme('header') ?>
-            </div>
-            <div class="grid_12" id="menu">
-                <?= theme('menu') ?>
-            </div>
-            <? if ($featured = theme('featured')) { ?>
-                <div class="grid_12">
-                    <?= $featured ?>
+        <div  id="wrapper">
+            <div class="container_12" id="body">
+                <div class="grid_12" id="header">
+                    <a href="<?= Url::link() ?>"><img src="<?= $theme->getFolder() ?>/img/logo.png" alt="cogear framwork" width="280"/></a>
+                    <?= theme('header') ?>
                 </div>
-            <? } ?>
-            <? $sidebar = theme('sidebar') ?>
-            <div class="grid_<?= $sidebar ? '9' : '12' ?>" id="content">
-                <?= theme('content') ?>
-            </div>
-            <? if ($sidebar): ?>
-                <div class="grid_3" id="sidebar">
-                    <?= $sidebar ?>
+                <div class="grid_12" id="menu">
+                    <?= theme('menu') ?>
                 </div>
-            <? endif ?>
+                <? if ($featured = theme('featured')) { ?>
+                    <div class="grid_12">
+                        <?= $featured ?>
+                    </div>
+                <? } ?>
+                <? $sidebar = theme('sidebar') ?>
+                <div class="grid_<?= $sidebar ? '9' : '12' ?>" id="content">
+                    <?= theme('content') ?>
+                </div>
+                <? if ($sidebar): ?>
+                    <div class="grid_3" id="sidebar">
+                        <?= $sidebar ?>
+                    </div>
+                <? endif ?>
+            </div>
         </div>
         <div id="footer">
             <div class="container_12">

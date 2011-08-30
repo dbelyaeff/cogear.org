@@ -88,6 +88,7 @@ abstract class Theme_Object extends Gear {
             return;
         $cogear = getInstance();
         $this->template = new Template($this->theme . '.' . $this->layout);
+        $this->template->theme = $this;
         $cogear->response->append($this->template->render());
         $this->is_rendered = TRUE;
     }

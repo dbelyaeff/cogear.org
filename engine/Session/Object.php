@@ -56,7 +56,7 @@ class Session_Object extends Cache_Object {
         'hash_function' => NULL,
         'hash_bits_per_character' => NULL
     );
-	private $options;
+    private $options;
     const HISTORY_STEPS = 10;
 
     /**
@@ -75,15 +75,17 @@ class Session_Object extends Cache_Object {
             if ($this->options->$key) {
                 if ($value = $this->options[$key] ? $this->options[$key] : $option) {
                     ini_set('session.' . $key, $value);
-			    }
+                }
                 $option && ini_set('session.' . $key, $option);
             } else {
+                
             }
         }
-		parent::__construct($this->options);
+        parent::__construct($this->options);
         $this->setHandler();
         $this->run();
     }
+
     /**
      * Set handler
      */
@@ -98,9 +100,9 @@ class Session_Object extends Cache_Object {
      */
     private function run() {
         session_name($this->name);
-		if(empty($_SESSION)){
-			session_start();
-		}
+        if (empty($_SESSION)) {
+            session_start();
+        }
         $session_id_ttl = $this->options['session_expire'];
         $this->init();
 

@@ -3,10 +3,12 @@ return array (
   'value' => 
   array (
     'download' => 'Download_Gear',
+    'featured' => 'Featured_Gear',
     'product' => 'Product_Gear',
     'team' => 'Team_Gear',
     'tutorials' => 'Tutorials_Gear',
     'user_guide' => 'User_Guide_Gear',
+    'jqueryorbit' => 'jQueryOrbit_Gear',
     'access' => 'Access_Gear',
     'admin' => 'Admin_Gear',
     'ajax' => 'Ajax_Gear',

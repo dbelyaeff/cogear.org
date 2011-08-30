@@ -12,6 +12,7 @@ return array (
      'pages edit_all' => true,
      'pages delete' => true,
      'pages create' => true,
+     'db debug' => true,
   )),
   'ttl' => NULL,
   'tags' => 

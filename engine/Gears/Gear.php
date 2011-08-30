@@ -78,7 +78,7 @@ class Gears_Gear extends Gear {
                     if (class_exists($class)) {
                         $object = new $class;
                         $object->active = TRUE;
-                        $gears[$object->package][$gear] = $object;
+                        $object->package && $gears[$object->package][$gear] = $object;
                     }
                 }
                 $tpl = new Template('Gears.list');
@@ -92,7 +92,7 @@ class Gears_Gear extends Gear {
                     if (class_exists($class)) {
                         $object = new $class;
                         $object->active = ($object->package == 'Core' OR $object->type == Gear::CORE OR in_array($gear, array_keys($active_gears)));
-                        $gears[$object->package][$gear] = $object;
+                        $object->package && $gears[$object->package][$gear] = $object;
                     }
                 }
                 $tpl = new Template('Gears.list');
@@ -106,7 +106,7 @@ class Gears_Gear extends Gear {
                     if (class_exists($class)) {
                         $object = new $class;
                         $object->active = ($object->package == 'Core' OR $object->type == Gear::CORE OR in_array($gear, array_keys($active_gears)));
-                        $gears[$object->package][$gear] = $object;
+                        $object->package && $gears[$object->package][$gear] = $object;
                     }
                 }
                 $tpl = new Template('Gears.list');
@@ -121,7 +121,7 @@ class Gears_Gear extends Gear {
                     $object = new $class;
                     if (time() - $object->file->getMTime() <= $new_period) {
                         if (!$object->active = ($object->package == 'Core' OR $object->type == Gear::CORE OR in_array($gear, array_keys($active_gears)))) {
-                            $gears[$object->package][$gear] = $object;
+                            $object->package && $gears[$object->package][$gear] = $object;
                         }
                     }
                 }
