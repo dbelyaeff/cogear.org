@@ -183,7 +183,7 @@ class Router extends Options {
             if (strpos($route, '$') === FALSE) {
                 $route .= '$';
             }
-            $regexp = '#' . $route . '#isU';
+            $regexp = '#^' . $route . '$#isU';
             if (preg_match($regexp, $this->uri,$this->matches)) {
                 $args = array();
                 if(is_array($callback) && sizeof($callback) > 2){
