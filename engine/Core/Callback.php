@@ -91,7 +91,14 @@ class Callback extends Cogearable{
                 $callback = self::stringToAction($callback);
                 $callback[0] = self::fetchObject($callback[0]);
                 return is_callable($callback) ? $callback : NULL;
-            } else {
+            }
+            elseif (is_array($callback)){
+                if(is_callable($callback[0])){
+                    $this->setArgs(array_slice($callback,1));
+                    $callback = $callback[0];
+                }
+            }
+            else {
                 return NULL;
             }
         }
