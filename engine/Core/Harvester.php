@@ -16,13 +16,13 @@ class Harvester{
      *
      * @var Core_ArrayObject
      */
-    private $scripts;
+    public $scripts;
     /**
      * Styles
      *
      * @var Core_ArrayObject
      */
-    private $styles;
+    public $styles;
     /**
      * Constructor
      */
