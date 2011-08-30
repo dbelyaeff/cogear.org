@@ -310,8 +310,9 @@ class Core_ArrayObject extends ArrayObject {
      * @return	int
      */
     public static function sortByOrder($a, $b) {
-        return self::sortBy('order',$a,$b);
+        return self::sortBy('order', $a, $b);
     }
+
     /**
      * Sort by param
      * 
@@ -320,11 +321,41 @@ class Core_ArrayObject extends ArrayObject {
      * @param object $b
      * @return int 
      */
-    public static function sortBy($param,$a, $b) {
+    public static function sortBy($param, $a, $b) {
         if ($a->order == $b->order) {
             return 0;
         }
         return floatval($a->order) < floatval($b->order) ? -1 : 1;
+    }
+
+    /**
+     * Filter by key
+     * 
+     * @param string $mask 
+     */
+    public function filterByKey($mask) {
+        $filterIt = new Iterator_Filter_Key($this->getIterator(), $mask);
+        $result = new self();
+        foreach ($filterIt as $key => $item) {
+            $result->$key = $item;
+        }
+        return $result;
+    }
+
+    /**
+     * Delete by mask
+     * 
+     * @param string $mask 
+     */
+    public function deleteByKey($mask) {
+        $filterIt = new Iterator_Filter_Key($this->getIterator(), $mask);
+        $delete = array();
+        foreach ($filterIt as $key => $item) {
+            $delete[] = $key;
+        }
+        foreach($delete as $key){
+            $this->offsetUnset($key);
+        }
     }
 
 }
@@ -337,16 +368,14 @@ class Core_ArrayObject extends ArrayObject {
  * @return array 
  */
 function array_diff_key_recursive($a, $b) {
-    foreach($a as $key=>$value){
-        if(is_array($value) && isset($b[$key])){
-            if($result  = array_diff_key_recursive($value, $b[$key])){
+    foreach ($a as $key => $value) {
+        if (is_array($value) && isset($b[$key])) {
+            if ($result = array_diff_key_recursive($value, $b[$key])) {
                 $a[$key] = $result;
-            }
-            else{
+            } else {
                 unset($a[$key]);
             }
-        }
-        elseif(isset($b[$key])){
+        } elseif (isset($b[$key])) {
             unset($a[$key]);
         }
     }
