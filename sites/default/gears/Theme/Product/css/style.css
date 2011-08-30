@@ -4,11 +4,28 @@ body {
 #header{
     height: 120px;
 }
+html, body, #wrapper {height: 100%;}
+
+body > #wrapper { height: auto; min-height: 100%; }
+
+/* must be same height as the footer */
+#body { padding-bottom: 150px; } 
+#content {
+    padding-bottom: 10px;
+}
+/*Opera Fix*/
+
 #footer {
     background: url(../img/footer.png) repeat-x top left;
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
     height: 150px;
+    clear: both;
+    padding: 20px 0;
+}
+.fl_r{
+    float: right;
+}
+.fl_l{
     float: left;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
 }
