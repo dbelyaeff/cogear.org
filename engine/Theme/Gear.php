@@ -132,7 +132,13 @@ class Theme_Gear extends Gear {
     public function renderRegion($name){
             $this->regions->$name OR $this->regions->$name = new Theme_Region();
             hook($name,array($this,'showRegion'),NULL,$name);
-            return event($name);
+            ob_start();
+            $result = event($name);
+            if($output = ob_get_clean()){
+               $result .= $output; 
+            }
+            return $result;
+            
     }
     
     /**
