@@ -35,6 +35,7 @@ class Errors_Gear extends Gear {
     public function _404(){
         $this->response->header('Status', '404 '. Response::$codes[404]);
         $tpl = new Template('Errors.404');
+        title(t('Page not found'));
         $tpl->show();
     }
 }
