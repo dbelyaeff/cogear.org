@@ -2,22 +2,51 @@ body {
 	/* background: url("../img/bg_2.jpg") repeat scroll 0 0 transparent; */
 	background: #f0edef;
 	height: 100%;
+	margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #444;
+    text-rendering: optimizeLegibility;
 }
 p {
-	color: #62666C;
-	font: 14px/18px "tahoma";
-	font-weight: 300;
+	margin-bottom: 10px;
 }
-h2, h3 {
-	color: #44464b;
-	font-family: "tahoma";
-    font-size: 28px;
-    font-weight: normal;
-}
+
 
 .logo{
 	margin-top: 10px;
 }
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+	color: #333;
+	font-size: 28px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-bottom: 12px;
+}
+h2 {
+	color: #444;
+	font-size: 22px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-bottom: 10px;
+}
+h3 {
+	color: #444;
+	font-size: 21px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+
+
 
 /* Secondary Menu
 ------------------------------------------------------------------------------------------------------ */
@@ -220,7 +249,8 @@ h2, h3 {
 /* Content
 ------------------------------------------------------------------------------------------------------ */
 .content {
-	background: url("../img/bg_content.jpg") repeat-x 0 0 #f0edef;
+	background: #f0edef url("../img/bg_content_zoomer.png") repeat-x ;
+	padding: 15px 0 0 0;
 }
 
 
