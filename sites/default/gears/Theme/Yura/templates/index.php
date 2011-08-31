@@ -65,10 +65,7 @@
 </div>
 
 <div class="content">
-
-
-
-	<div class="container_12">
+	<div class="container_12 clearfix">
 		<div id="coda-nav-1" class="slider_select">
 		<ul>
 			<li><a href="#1"></a></li>
@@ -76,7 +73,7 @@
 		</ul>
 		</div>
 		<? $sidebar = theme('sidebar') ?>
-		<div class="grid_<?= $sidebar ? '9' : '12' ?>" >
+		<div class="grid_<?= $sidebar ? '9' : '12' ?>" id="content">
 			<?= theme('content') ?>
 		</div>
 		<? if ($sidebar): ?>
@@ -86,8 +83,6 @@
 		<? endif ?>
 	</div>
 </div>
-
-<div class="clear"></div>
 
 <div class="footer">
 	<div class="container_12">
