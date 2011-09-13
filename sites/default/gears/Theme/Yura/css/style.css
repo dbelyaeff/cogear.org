@@ -1,0 +1,303 @@
+body {
+	/* background: url("../img/bg_2.jpg") repeat scroll 0 0 transparent; */
+	background: #f0edef;
+	height: 100%;
+	margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #444;
+    text-rendering: optimizeLegibility;
+}
+p {
+	margin-bottom: 10px;
+}
+a, a:visited{
+	color: #003399;
+}
+
+.logo{
+	margin-top: 10px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+}
+h1 {
+	color: #333;
+	font-size: 28px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-bottom: 12px;
+}
+h2 {
+	color: #444;
+	font-size: 22px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-bottom: 10px;
+}
+h3 {
+	color: #444;
+	font-size: 21px;
+	text-shadow: 1px 1px 0  #FEFEFE;
+	margin-top: 20px;
+	margin-bottom: 8px;
+}
+
+
+
+/* Secondary Menu
+------------------------------------------------------------------------------------------------------ */
+.secMenu {
+	height: 26px;
+	background: #0f0c0e;
+	border-bottom: 1px solid #494247;
+}
+.secMenu ul {
+	list-style: none;
+	float: right;
+	margin-bottom: 0;
+}
+.secMenu ul li {
+	float: left;
+}
+.secMenu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #e0d0c5;
+	font-size: 10px;
+	line-height: 26px;
+}
+.secMenu a:hover {
+	color: #fff;
+}
+
+
+/* Main Menu
+------------------------------------------------------------------------------------------------------ */
+.mainMenu {
+	height: 128px;
+	background: url("../img/bg_menu.jpg") repeat-x 0 0;
+	border-bottom: 1px solid #000;
+	line-height: 128px;
+}
+.mainMenu div.container_12 {
+	/*background: url("../img/bg_menu_center.jpg") no-repeat 0 0;*/
+}
+.mainMenu ul {
+	list-style: none;
+	float: right;
+	margin-top: 45px;
+}
+.mainMenu ul li {
+	float: left;
+	margin: 0 15px 0 0;
+}
+.mainMenu ul li a {
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #e0d0c5;
+	font-size: 12px;
+	line-height: 33px;
+	padding: 0 11px;
+	
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px; 
+}
+.mainMenu ul li a:hover {
+	color: #fff;
+	background: #4a4a4e;
+}
+
+
+/* Slider
+------------------------------------------------------------------------------------------------------ */
+.slider div.container_12 {
+	position: relative;
+}
+#engine_start {
+	position: absolute;
+	left: 799px;
+	width: 151px;
+	height: 88px;
+	background: url("../img/bg_engine_start.png") no-repeat 0 0;
+	z-index: 99;
+}
+.btn_engine_start {
+	display: block;
+	width: 69px;
+	height: 69px;
+	margin: 5px 0 0 71px;
+	background: url("../img/btn_engine_start.png") no-repeat 0 0;
+}
+
+
+.slider {
+	background: url("../img/bg_slider.jpg") repeat-x 0 0;
+	height: 418px;
+}
+
+	/* Slide 1 - Cogear2 CMS */
+	.cogear_cms {
+		background: url("../img/bg_slider_cms.jpg") no-repeat 120px 0;
+		height: 418px;
+		position: relative;
+	}
+	.citates_cms {
+		position: absolute;
+		top: 70px;
+		width: 403px;
+		height: 98px;
+		background: url("../img/citation.png") no-repeat 0 0;
+	}
+	.cogear2 {
+		position: absolute;
+		top: 215px;
+		width: 493px;
+		height: 87px;
+		background: url("../img/cogear2_cms.png") no-repeat 0 0;
+	}
+	.get_cms {
+		position: absolute;
+		top: 320px;
+		left: 147px;
+	}
+	.get_button {
+		float: left;
+		margin-right: 20px;
+		width: 177px;
+		height: 40px;
+	}
+	.btn_download_cms {
+		display: block;
+		width: 177px;
+		height: 40px;
+		background: url("../img/btn_download_cms.png") no-repeat 0 0;
+	}
+	.btn_tour_cms {
+		display: block;
+		width: 177px;
+		height: 40px;
+		background: url("../img/btn_download_cms.png") no-repeat 0 -47px;
+	}
+
+	/* Slide 2 - Cogear Framework */
+	.cogear_framework {
+		background: url("../img/bg_tieser_framework.jpg") no-repeat 35px 0;
+		height: 418px;
+		position: relative;
+	}
+	.citates_framework {
+		position: absolute;
+		top: 70px;
+		left: 400px;
+		width: 403px;
+		height: 98px;
+		background: url("../img/citation.png") no-repeat 0 -98px;
+	}
+	.advatages {
+		position: absolute;
+		top: 260px;
+		left: 40px;
+		width: 186px;
+		height: 89px;
+		background: url("../img/advantages.png") no-repeat 0 0;
+	}
+	.cogear {
+		position: absolute;
+		top: 215px;
+		left: 510px;
+		width: 370px;
+		height: 144px;
+		background: url("../img/cogear_framework.png") no-repeat 0 0;
+	}
+
+.slider_select {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+}
+.slider_select ul {
+	margin: 0;
+	padding-top: 15px;
+	padding-bottom: 40px;
+}
+.slider_select li {
+	list-style: none;
+	float: left;
+}
+.slider_select li a {
+	background: url("../img/btn_slider_select.png") no-repeat 0 0;
+	display: block;
+	height: 15px;
+	width: 15px;
+}
+.slider_select li a.current {
+	background-position: 0 -18px;
+}
+
+
+/* Content
+------------------------------------------------------------------------------------------------------ */
+.content {
+	background: #f0edef url("../img/bg_content_zoomer.png") repeat-x ;
+	padding: 15px 0 0 0;
+}
+
+.breadcrumbs{
+	padding: 6px;
+	margin-bottom: 16px;
+	color: #867870;
+	font-size: 14px;
+}
+.breadcrumbs a{
+	color: #867870;
+}
+
+/* Sidebar
+------------------------------------------------------------------------------------------------------ */
+.doc_menu a{
+	text-decoration: none;
+	color: #49362b;
+}
+
+#sidebar .cat {
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+#sidebar ul {
+	list-style: none;
+	margin-bottom: 10px;
+}
+#sidebar ul li{
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+#sidebar ul li a.active{
+	font-weight: bold;
+}
+
+
+
+
+
+
+/* footer
+------------------------------------------------------------------------------------------------------ */
+.footer {
+	background: #363639;
+	height: 200px;
+	padding-top: 20px;
+}
+.footer p {
+	color: #ebedf0;
+}
+
