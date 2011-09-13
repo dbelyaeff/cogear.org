@@ -6,14 +6,16 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 20px;
     color: #444;
     text-rendering: optimizeLegibility;
 }
 p {
 	margin-bottom: 10px;
 }
-
+a, a:visited{
+	color: #003399;
+}
 
 .logo{
 	margin-top: 10px;
@@ -241,17 +243,51 @@ h3 {
 }
 
 
-
-
-
-
-
 /* Content
 ------------------------------------------------------------------------------------------------------ */
 .content {
 	background: #f0edef url("../img/bg_content_zoomer.png") repeat-x ;
 	padding: 15px 0 0 0;
 }
+
+.breadcrumbs{
+	padding: 6px;
+	margin-bottom: 16px;
+	color: #867870;
+	font-size: 14px;
+}
+.breadcrumbs a{
+	color: #867870;
+}
+
+/* Sidebar
+------------------------------------------------------------------------------------------------------ */
+.doc_menu a{
+	text-decoration: none;
+	color: #49362b;
+}
+
+#sidebar .cat {
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+#sidebar ul {
+	list-style: none;
+	margin-bottom: 10px;
+}
+#sidebar ul li{
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+#sidebar ul li a.active{
+	font-weight: bold;
+}
+
+
+
+
 
 
 /* footer
